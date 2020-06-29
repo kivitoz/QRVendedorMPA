@@ -73,10 +73,11 @@ $(document).ready(function() {
                         // REVISA AQUÍ:(Ok)
                         // Agrega la URL notification_url 
                         // para recibir las notificaciones en tu endpoint público.
-
+                        //"notification_url": "https://hookb.in/DrGJkXnnPnFdNNEweNm7",
+                        //"notification_url": "https://app-qrintegrator-29131999.herokuapp.com/api/notifications/index.php",
                         var orderJSON = {
                             "external_reference": external_reference,
-                            "notification_url": "https://hookb.in/DrGJkXnnPnFdNNEweNm7",
+                            "notification_url": "https://app-qrintegrator-29131999.herokuapp.com/api/notifications/index.php",
                             "items": items
                         };
 
@@ -105,7 +106,7 @@ $(document).ready(function() {
 
                                 $.get("api/order/status/index.php", { "external_reference": external_reference }, function(data) {
 
-                                    console.log("Search de Merchant_order:");
+                                    console.log("Search de Merchant_order " + external_reference + ": ");
                                     console.log(data);
 
                                     var elements = data.elements;
