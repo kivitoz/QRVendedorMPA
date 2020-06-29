@@ -13,10 +13,12 @@ $lastResource = file_get_contents('../notifications.txt');
 
 $EXTERNAL_REFERENCE = "";
 
-$jsonResource = json_decode($lastResource, true);
+//Decomentar estas lineas si el lastResource es un JSON
+//$jsonResource = json_decode($lastResource, true);
+//$urlResource = $jsonResource['resource'];
 
-
-$urlResource = $jsonResource['resource'];
+//Url en texto Plano. Utilizar el código anterior en caso de recibir un JSON
+$urlResource = $lastResource;    
 
 $url= $urlResource."?access_token=$access_token";
 
